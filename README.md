@@ -1,45 +1,85 @@
-# 📝 Next Word Generator using LSTM
+# Next Word Generator using LSTM
 
-This project implements a **Next Word Prediction system** using an **LSTM (Long Short-Term Memory)** neural network.  
-Given a sequence of words, the model predicts the most likely next word based on learned patterns from text data.
-
-⚠️ This project is built **for learning and understanding NLP and sequence modeling**, not for production use.
+A beginner-friendly NLP project that predicts the **next word in a sentence** using an LSTM (Long Short-Term Memory) neural network.  
+This project is built mainly for **learning purposes** to understand sequence modeling and text generation, not for production use.
 
 ---
 
-## 📌 Features
-
-- Predicts the next word for a given sentence
-- Supports generating multiple words sequentially
-- Uses LSTM for sequence learning
-- Text preprocessing (tokenization & padding)
-- Embedding layer for word representation
-- Simple and readable code structure
-- Optional Streamlit UI
+## 📖 Project Description
+The goal of this project is to explore how recurrent neural networks, specifically LSTMs, can be applied to natural language processing tasks.  
+By training on text data, the model learns word sequences and attempts to predict the next word given a partial sentence.
 
 ---
 
-## 🛠️ Tech Stack
-
-- Python  
-- TensorFlow / Keras  
-- NumPy  
-- Streamlit  
-- NLP (Tokenization, Sequence Modeling)
-
----
-
-## 🧠 How It Works
-
-1. Text data is tokenized into integer sequences  
-2. Fixed-length input sequences are created using padding  
-3. Words are converted into dense vectors using an Embedding layer  
-4. LSTM learns sequential word patterns  
-5. Softmax layer predicts the probability of the next word  
-6. The most probable word is selected as output  
+## ✨ Features
+- Text preprocessing: tokenization and padding
+- Neural network with:
+  - Embedding layer
+  - LSTM layer
+  - Dense + Softmax output layer
+- Streamlit app for simple user interaction
+- Example-driven workflow for beginners in NLP
 
 ---
 
-## 🧪 Example
+## 🛠 Tech Stack
+- **Python**
+- **TensorFlow / Keras**
+- **NumPy**
+- **Streamlit**
 
-**Input:**
+---
+
+## ⚙️ How the Model Works
+1. **Preprocessing**  
+   - Input text is tokenized into sequences of integers.  
+   - Sequences are padded to ensure uniform length.
+
+2. **Model Architecture**  
+   - **Embedding Layer**: Converts words into dense vector representations.  
+   - **LSTM Layer**: Learns sequential dependencies between words.  
+   - **Dense + Softmax Layer**: Outputs probability distribution over the vocabulary for the next word.
+
+3. **Prediction**  
+   - Given an input sequence, the model predicts the most likely next word.  
+   - Example:  
+     - Input: `"Hello, You are "`  
+     - Output: `"Hello, You are right it about the difference"`
+
+---
+
+## ⏱ Training Time
+Training an LSTM is **computationally expensive** due to its sequential nature.  
+- On a CPU, training can take **60–70 minutes** depending on dataset size.  
+- This is expected behavior and highlights why LSTMs are less efficient compared to newer architectures.
+
+---
+
+## ⚠️ Limitations
+- **Slow training** on large datasets (especially on CPU).  
+- **Limited generalization**: predictions may not always be meaningful without extensive training data.  
+- **No pretrained model or large datasets** included in this repository (to keep it lightweight).  
+
+---
+
+## 🎯 Purpose
+This project is designed for **learning and experimentation**:  
+- Understanding sequence modeling with LSTMs.  
+- Practicing text preprocessing techniques.  
+- Building a simple end-to-end NLP pipeline.  
+
+It is **not intended for production deployment**.
+
+---
+
+## 🚀 Future Improvements
+- Replace LSTM with **Transformer-based models** (e.g., GPT, BERT) for faster training and better performance.  
+- Add support for pretrained embeddings (e.g., GloVe, Word2Vec).  
+- Improve the Streamlit interface with visualization of predictions.  
+
+---
+
+## 📌 Example Usage
+Run the Streamlit app:
+```bash
+streamlit run app.py
